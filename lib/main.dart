@@ -11,25 +11,41 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  void startAddNewTransaction(BuildContext context) {
+    showModalBottomSheet(context: context, builder: (ctx) {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Expeditures'),
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Card(
-              color: Colors.blue,
-              child: Container(
-                width: double.infinity,
-                child: Text('card'),
-              ),
-              elevation: 5,
+      appBar: AppBar(
+        title: Text('Expeditures'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Card(
+            color: Colors.blue,
+            child: Container(
+              width: double.infinity,
+              child: Text('card'),
             ),
-            UserTransaction()
-          ],
-        ));
+            elevation: 5,
+          ),
+          UserTransaction()
+        ],
+      ),
+    );
   }
 }
